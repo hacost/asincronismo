@@ -1,0 +1,21 @@
+{
+  "name": "asincronismo",
+  "version": "1.0.0",
+  "description": "trabajar con asincronismo en JavaScript",
+  "main": "src/app.js",
+  "scripts": {
+    "app": "node src/callbacks/app.js",
+    "examples": "node src/callbacks/examples.js"
+  },
+  "keywords": [
+    "callbacks",
+    "promise",
+    "async"
+  ],
+  "author": "'Héctor Acosta - hacost@hotmail.com '",
+  "license": "MIT",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
+}
+
