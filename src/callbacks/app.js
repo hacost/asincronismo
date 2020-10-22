@@ -1,37 +1,30 @@
-/** first install xmlhttprequest
- * npm install xmlhttprequest --save
- * 
- */
+//declaramos una función
+function sum(valor1, valor2){
+    return valor1 + valor2
+}
 
- let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
- const API = 'https://rickandmortyapi.com/api/character/'
+//indicamos que vamos a usar un callback, podemos ponerle otro nombre
+function calculator(valor1, valor2, callback){
+    return callback(valor1, valor2)
+}
 
- function fetchData(url_api, callback){
-    let xhttp = new XMLHttpRequest()
-    //ponemos true para activar el asincronismo, por default es true
-    xhttp.open('GET', url_api, true)
-    xhttp.onreadystatechange = function (event){
-        if (xhttp.readyState === 4) {
-            if (xhttp.status === 200) {
-                callback(null, JSON.parse(xhttp.responseText))
-            } else {
-                const error = new Error(`ERROR ${url_api}`)
-                return callback(error, null)
-            }
-        }
-    }
-    xhttp.send()
- }
+// ejecutamos el callback, solo se pone sum, sin parentesis 
+// por que solo indicamos el nombre de la función y no la ejecutamos como tal
+console.log(calculator(2,2,sum))
 
-fetchData(API, function (error1, data1){
-    if (error1) return console.error(error1)
-    fetchData(API + data1.results[0].id, function (error2, data2){
-        if (error2) return console.error(error2)
-        fetchData(data2.origin.url, function (error3, data3){
-            if (error3) return console.error(error3)
-            console.log(data1.info.count)
-            console.log(data2.name)
-            console.log(data3.dimension)
-        })
-    })
-})
+// otro ejemplo para invocar una función callback
+function date(callback){
+    console.log(new Date)
+    setTimeout(() => {
+        let date = new Date
+        callback(date)
+    }, 3000);
+}
+
+// implementar la función callback
+function printDate(dateNow){
+    console.log(dateNow)
+}
+
+//llamar a date pasandole nuestro callback
+date(printDate)
