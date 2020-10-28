@@ -4,8 +4,12 @@
   "description": "trabajar con asincronismo en JavaScript",
   "main": "src/app.js",
   "scripts": {
-    "app": "node src/callbacks/app.js",
-    "examples": "node src/callbacks/examples.js"
+    "callbacks": "node src/callbacks/app.js",
+    "callbacks:challenge": "node src/callbacks/challenge.js",
+    "promise": "node src/promise/app.js",
+    "promise:challenge": "node src/promise/challenge.js",
+    "async": "node src/async/app.js",
+    "async:challenge": "node src/async/challenge.js"
   },
   "keywords": [
     "callbacks",

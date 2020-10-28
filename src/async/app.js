@@ -1,3 +1,4 @@
+// declaro mi promesa
 const doSomethingAsync = () =>{
     return new Promise((resolve, reject) => {
         (true)
@@ -6,6 +7,7 @@ const doSomethingAsync = () =>{
     })
 }
 
+// mi arrow function es async
 const doSomething = async () =>{
     const something = await doSomethingAsync()
     console.log(something)
